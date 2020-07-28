@@ -1,0 +1,61 @@
+
+
+section {
+    height: 100%;
+    /* border: 2px solid black; */
+
+    text-align: center;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns */
+    grid-template-rows: 10% 80% 10%; /* 3 rows */
+}
+
+section > * {
+    border: 2px solid black;
+}
+
+header, footer {
+    grid-column: span 12;
+    background-color: #B9BFCA ;
+}
+main  {
+    grid-column: span 12;   
+    background-image: url("https://www.delnext.com/blog/wp-content/uploads/2017/01/delnext_blog_shopping_online-.png");
+    background-size: cover;
+}
+
+aside{
+    background-color: lightgrey;
+}
+
+header{
+    text-align: left;
+}
+
+
+img{
+    margin-top:8px;
+    margin-left: 8px;
+    height: 50px;
+    width: 50px;
+    
+}
+    
+    span{
+      
+        display: inline;
+        font-weight: bolder;
+        margin-left: 10px;
+        text-decoration: underline;
+        color: #4C889B;
+    }
+    
+    h1{
+    
+        display: inline;
+        
+       margin-left: 280px ;
+    }
+
+  

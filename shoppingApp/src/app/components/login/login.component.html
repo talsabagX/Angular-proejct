@@ -1,0 +1,99 @@
+<main>
+
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-alt"></i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+    <div class="loginContainer">
+        <form #loginForm="ngForm">
+            <input #userNameInput="ngModel" type="text" placeholder="User name" required name="username"
+                [(ngModel)]="userLoginDetails.userName"><br>
+            <span *ngIf="userNameInput.errors?.required && userNameInput.touched">Missing - username </span><br>
+            <input #passwordInput="ngModel" type="password" placeholder="Password" required name="password"
+                [(ngModel)]="userLoginDetails.password"><br>
+            <span *ngIf="passwordInput.invalid && passwordInput.touched">password is missing</span><br>
+            <input type="button" [disabled]="loginForm.form.invalid" (click)="login()" value="Login" id="button" /><br>
+            <!-- <a routerLink="/updatePassword" routerLinkActive="the-chosen-one" >forgot password</a> -->
+            <a data-toggle="modal" data-target="#myModal">forgot password</a>
+
+        </form>
+
+        <p>new user please regiser here:</p>
+        <a routerLink="/register" routerLinkActive="the-chosen-one"> sign up</a>
+    </div>
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSF9gklkY3SiPZRuVGPOcx3ErMm8eH3eHg-YrekurL7P_3RuUmo&usqp=CAU" id="imgModal">
+                        <h1 id="h1Modal">Update Password</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <form #passwordForm="ngForm" id="forgetModal">
+                                <input #userNameUpdateInput="ngModel" type="text" required placeholder="user name"
+                                    name="username" [(ngModel)]="updatePasswordForm.userName"><br>
+                                <span
+                                    *ngIf="userNameUpdateInput.errors?.required && userNameUpdateInput.touched">Missing
+                                    -
+                                    username
+                                </span><br>
+                                <input #passwordInputUpdate="ngModel" type="password" placeholder="password"
+                                    name="password" required
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                                    [(ngModel)]="updatePasswordForm.password"><br>
+                                <span
+                                    *ngIf="passwordInputUpdate.errors?.required && passwordInputUpdate.touched">password
+                                    is
+                                    missing </span>
+                                <span
+                                    *ngIf="passwordInputUpdate.errors?.pattern && passwordInputUpdate.touched">password
+                                    is
+                                    week</span><br>
+                                <input #confirmPasswordInput="ngModel" required type="password"
+                                    placeholder="confirm password" name="confirmPassword" (keyup)=checkPassword()
+                                    [(ngModel)]="confirmPassword"><br>
+                                <span
+                                    *ngIf="confirmPasswordInput.errors?.required && confirmPasswordInput.touched">field
+                                    is required
+                                </span>
+                                <span *ngIf=!isPasswordConfirm>password is not confirm</span><br>
+
+
+                            </form>
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <div style="text-align: center;">
+                        </div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                            (click)="updateUserPassword()" [disabled]="passwordForm.form.invalid">update</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</main>

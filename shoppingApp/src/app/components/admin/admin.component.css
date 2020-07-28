@@ -1,0 +1,85 @@
+section{
+    height: 100%;
+    display: grid;
+   margin: 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100% 0% 0%; 
+    text-align: left;
+}
+header{
+    height: 20%;
+}
+main  {
+    height: 80%;
+    grid-column: span 9;   
+    background-image: url("https://www.delnext.com/blog/wp-content/uploads/2017/01/delnext_blog_shopping_online-.png");
+background-size: cover;
+
+}
+#imageSpan{
+    display:block;
+}
+.card:hover{
+    transform: scale(1.1); 
+}
+aside{
+    grid-column: span 3;   
+
+}
+
+button{
+    align-self: start;
+}
+#cardsContainer{
+   
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 100%;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    width: 230px;
+    margin-top: 10px;
+    margin-left:75px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: arial;
+    background-color: rgb(222, 222, 222 );
+     transition: all .2s ease-in-out; 
+     border-radius: 5px;
+}
+
+img{
+    height: 100PX;
+    width: 100PX;
+}
+
+#search,
+textarea {
+    margin-top: 25px;
+    margin-left: 400px;
+    text-align: center;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  box-sizing: border-box;
+  outline: none;
+  padding: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.modal-body{
+    text-align: center;
+}
+input,
+textarea, select {
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.modal-footer{
+    background-color: rgba(206, 188, 215 ,0.5) ;
+}

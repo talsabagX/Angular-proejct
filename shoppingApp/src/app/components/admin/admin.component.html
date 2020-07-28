@@ -1,0 +1,48 @@
+<section>
+
+    <aside>
+        <app-admin-add-product></app-admin-add-product>
+    </aside>
+
+    <main>
+        <header>
+            <input id="search" type="text" placeholder="serch product" [(ngModel)]="byName">
+        </header>
+
+        <div id="cardsContainer">
+            <div class="card" *ngFor="let currentProduct of products|productsPipeByName:byName" data-toggle="modal"
+                data-target="#myModal" (click)=[(initShowProduct(currentProduct))]>
+                <img src={{currentProduct.path}}>
+                <h6>{{ currentProduct.product_name }}</h6>
+                <p class="price">{{ currentProduct.price }} NIS</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-body">
+                          <span id="imageSpan"><img src={{showProduct.path}}></span> 
+                          <label> Product name: <input type="text" [(ngModel)]="showProduct.product_name">  </label> <br>
+                          <label> Product price: <input type="number" [(ngModel)]="showProduct.price" ></label>
+                          <label> Product image: <input type="text" [(ngModel)]="showProduct.path"></label> 
+
+                        </div>
+                        <div class="modal-footer">
+                            <div style="text-align: center;">
+                            </div>
+                            <button type="button" class="btn btn-default" (click)=[(updateProduct())] data-dismiss="modal">Update product</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</section>

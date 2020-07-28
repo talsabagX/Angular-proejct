@@ -1,0 +1,70 @@
+header{
+    height: 10%;
+    border: solid black 1px;
+    padding: 10px;
+    background-color: #B9BFCA ;
+    text-align: center;
+}
+main{
+    height: 75%;
+    overflow-y: auto;
+    background-color: rgba(222, 222, 222 ,0.8);
+}
+footer{
+    height: 15%;
+    padding: 10px;
+    background-color: #B9BFCA ;
+}
+
+section{
+    height: 100%;
+}
+
+p{
+    font-size: x-large;
+   
+    
+}
+
+
+
+table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: black;
+}
+
+#trDiv{
+    border: black solid 1px;
+    text-align: center;
+    background-color: #B9BFCA;;
+}
+
+td{
+    display: inline;
+}
+
+button{
+    display: block;
+    margin-left: auto;
+  
+}
+
+footer{
+    
+    font-size: large;
+}
+
+.footerButton{
+    display: inline;
+}
+.glyphicon-remove{
+    display: block;
+    margin-left:90%;
+    transition: all .2s ease-in-out; 
+}
+
+.glyphicon-remove:hover{
+    transform: scale(1.1); 
+}

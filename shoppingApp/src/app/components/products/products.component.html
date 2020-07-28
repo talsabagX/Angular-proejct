@@ -1,0 +1,53 @@
+<section>
+    <header>
+        <h1 id="all">All Products</h1>
+        <input type="text" placeholder="serch product" [(ngModel)]="byName">
+    </header>
+    <main>
+
+        <div id="cardsContainer">
+            <div class="card" *ngFor="let currentProduct of products|productsPipeByName:byName" data-toggle="modal"
+                data-target="#myModal" (click)=[(initShowProduct(currentProduct))]>
+                <img src={{currentProduct.path}}>
+                <h6>{{ currentProduct.product_name }}</h6>
+                <p class="price">{{ currentProduct.price }} NIS</p>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src={{showProduct.path}}>
+                            <h1 class="modalProductName">{{ showProduct.product_name }}</h1><br>
+                            <hr>
+                            <p>
+                                price: {{ showProduct.price }} NIS
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <div style="text-align: center;">
+                                <p>please choose the quantity to purches </p>
+                                <select [(ngModel)]="productInformationToAdd.amount">
+                                    <option *ngFor="let currentOption of optionAmountArray"> {{currentOption}}</option>
+                                </select>
+
+
+                            </div>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                (click)=[(addCartItem(showProduct))]>add to cart</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</section>

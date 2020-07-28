@@ -1,0 +1,52 @@
+<section>
+
+    <main id="registerForm">
+
+        <div >
+
+            <form #subscribeForm="ngForm" >
+
+                <input #userNameInput="ngModel" type="text" required
+                    pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                    name="username" placeholder="user name" [(ngModel)]="registrationForm.userName"><br>
+                <span *ngIf="userNameInput.errors?.required && userNameInput.touched">user name is required </span>
+                <span *ngIf="userNameInput.errors?.pattern && userNameInput.touched">invalid user name </span><br>
+                <input #passwordInput="ngModel" type="password" placeholder="password" name="password" required
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                    [(ngModel)]="registrationForm.password"><br>
+                <span *ngIf="passwordInput.errors?.required && passwordInput.touched">password is required </span>
+                <span *ngIf="passwordInput.errors?.pattern && passwordInput.touched">password is week</span><br>
+                <input #confirmPasswordInput="ngModel" required type="password" placeholder="confirm password"
+                    name="confirmPassword" (keyup)=checkPassword() [(ngModel)]="confirmPassword"><br>
+                <span *ngIf="confirmPasswordInput.errors?.required && confirmPasswordInput.touched">field is required
+                </span>
+                <span *ngIf=!isPasswordConfirm>password is not confirm</span><br>
+
+                <input #firstNameInput="ngModel" type="text" name="firstname" required placeholder="first name"
+                    [(ngModel)]="registrationForm.name"><br>
+                <span *ngIf="firstNameInput.errors?.required && firstNameInput.touched">required feild </span><br>
+                <input #lastNameInput="ngModel" type="text" name="lastname" required placeholder="last name"
+                    [(ngModel)]="registrationForm.lastName"><br>
+                <span *ngIf="lastNameInput.errors?.required && lastNameInput.touched">required feild </span><br>
+                <select #cityInput="ngModel" type="text" name="city" required [(ngModel)]="registrationForm.city">
+                    <option *ngFor="let currentCity of cityArray" placeholder="city">{{currentCity}}</option>
+                </select><br>
+                <span *ngIf="cityInput.errors?.required && cityInput.touched">required feild </span><br>
+                <input #streetInput="ngModel" type="text" name="street" required placeholder="street"
+                    [(ngModel)]="registrationForm.address"><br>
+                <span *ngIf="streetInput.errors?.required && streetInput.touched">required feild </span><br>
+
+                <button type="submit" [disabled]="subscribeForm.form.invalid" [disabled]="isPasswordConfirm==false"
+                    routerLink="/" (click)="registerNewUser()" value="register">register</button>
+                <button type="button" routerLink="/">cancel</button>
+            </form>
+
+        </div>
+        <div>
+
+        </div>
+    </main>
+
+
+
+</section>

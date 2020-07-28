@@ -1,0 +1,25 @@
+<section>
+
+
+    <header>
+        <span id="headerSpan"><h1>Hello {{userFirstName}} {{userLastName}} , and wellcome to Shopping-online</h1></span>
+    </header>
+
+    <main>
+
+        <button [disabled]="isUserHaveOrder==false" routerLink="/myOrders" routerLinkActive="the-chosen-one">Previews
+            Order</button><br><br>
+        <button [disabled]="isUserHaveAnOpanCart==false" routerLink="/shopping" routerLinkActive="the-chosen-one">Open
+            Cart</button><br><br>
+        <button (click)="addCartToUser()" [disabled]="isUserHaveAnOpanCart==true" routerLink="/shopping" routerLinkActive="the-chosen-one">New
+            Cart</button><br><br>
+
+
+
+
+    </main>
+ 
+
+
+
+</section>

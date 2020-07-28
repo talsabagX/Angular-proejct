@@ -1,0 +1,18 @@
+<div id="myBody">
+    <div id="container">
+        <div *ngFor="let currentOrder of orders let i=index" id="rows" >
+           <p>Shipping date : {{currentOrder.shipping_date}}</p>
+           <p>City to delivre : {{currentOrder.city}}</p>
+           <p>Address to delivre : {{currentOrder.address}}</p>
+           <p>Credit card : ***********{{currentOrder.credit}}</p>
+           <hr>
+           <p id="price">Total price : {{currentOrder.total_price}} Nis</p>
+            </div>
+</div>
+
+<br><br>
+<div id="footer">
+<span>Go back to store</span><br>
+<a href="/client">Click here</a>
+</div>
+</div>

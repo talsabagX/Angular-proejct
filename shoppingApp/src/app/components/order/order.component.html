@@ -1,0 +1,74 @@
+<section>
+
+
+    <aside id="cartItems">
+        <div id="header">
+            <h3>My Order</h3>
+            <input type="text" placeholder="search" [(ngModel)]="query"><br>
+        </div>
+
+            <!-- <table class="table table-old" id="rows">
+
+                <tbody class="bg-success text-dark"> -->
+
+                    <div id="container">
+                    <div *ngFor="let currentCartItem of cartItem let i=index" id="rows">
+                          <span [innerHTML]="highlight(i)"></span>
+                          X 
+                              {{ currentCartItem.amount}}:
+                              <p id="recipt">     price: {{ currentCartItem.total_price }} Nis </p>
+                        </div>
+                        <span><hr></span>
+                  <div id="totalOrderPrice">
+                   
+                    <span>  total order price: {{totalAmountToPay}} Nis</span>
+                    </div>
+</div>
+     
+    <p id="linkToStore">Didnt finshed yet ? <a href="/shopping/allproducts">Go back to store</a>
+    </p>
+   
+
+    </aside>
+
+
+
+    <aside>
+        <div>
+            <h3>Order Details</h3>
+            <form #orderForm="ngForm">
+              
+
+                <input type="text" #cityInput="ngModel" required
+                 placeholder="City to delivere" name="city" class="orderForm"
+                    [(ngModel)]="orderDetaiels.city"><br>
+                    <span class="errors" *ngIf="cityInput.errors?.required && cityInput.touched">City to delivere is required</span><br>
+
+                <input type="text" #addressInput="ngModel" required
+                 placeholder="Address to delivere" name="street" class="orderForm"
+                    [(ngModel)]="orderDetaiels.address"><br>
+                    <span class="errors" *ngIf="addressInput.errors?.required && addressInput.touched">Address to delivere is required</span><br>
+
+                <input type="date"  #dateInput="ngModel" required
+                 placeholder="Date to delivere" name="date" class="orderForm" 
+                    [(ngModel)]="orderDetaiels.shipping_date"><br>
+                    <span class="errors" *ngIf="dateInput.errors?.required && dateInput.touched">Date to delivere is required</span><br>
+                <input #creditInput="ngModel" 
+                pattern="^[0-9]{4}$" type="number" placeholder="cradit card" name="craditCard" class="orderForm"
+                    [(ngModel)]="orderDetaiels.credit"><br>
+                    <span class="errors" *ngIf="creditInput.errors?.required && creditInput.touched">Last 4 digits of credit is required</span><br>
+                    <span class="errors" *ngIf="creditInput.errors?.pattern && creditInput.touched">Only 4 digits are allowed</span><br>
+
+                <button type="submit" id="submitButton" [disabled]="orderForm.form.invalid" (click)="addOrder()">Order</button>
+
+            </form>
+
+        </div>
+        <div>
+
+        </div>
+    </aside>
+
+
+
+</section>

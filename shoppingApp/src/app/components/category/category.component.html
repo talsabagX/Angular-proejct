@@ -1,0 +1,17 @@
+<div>
+    <table class="table table-old">
+
+        <tbody class="bg-success text-dark">
+            <tr>
+                <td routerLink="allproducts" routerLinkActive="the-chosen-one">
+                    <p>All Products</p>
+                </td>
+            </tr>
+            <tr *ngFor="let currentCategory of category">
+                <td routerLink="{{currentCategory.name}}"
+                    (click)=[(getAllProductsCategory(currentCategory.id))] routerLinkActive="the-chosen-one">
+                    {{ currentCategory.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

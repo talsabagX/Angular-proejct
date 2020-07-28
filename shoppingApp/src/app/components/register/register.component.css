@@ -1,0 +1,54 @@
+input ,select , button{
+    width: 400px;
+    font-size: medium;
+    margin: 0; 
+    padding : 5px;
+    /* Round corners button */ 
+    border-radius: 15px;  
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);    
+}
+    
+input:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button{
+    width: 120px;
+    font-size: large;
+    margin:10px;
+}
+    
+div{
+    /* text-align: center; */
+    margin-top: 25px;
+    /* catches the full space to the end of the screen */
+    display: block; 
+}
+    
+form{
+    column-span: all;  
+}
+
+
+section {
+    height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns */
+  
+}
+
+main  {
+    grid-column: span 12;   
+    background-color: lightgrey
+}
+
+span{
+    color: red;
+}
+
+
+#registerForm{
+    background-size: cover;
+    background-image: url("https://www.delnext.com/blog/wp-content/uploads/2017/01/delnext_blog_shopping_online-.png");
+}

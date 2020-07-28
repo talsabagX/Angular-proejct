@@ -1,0 +1,33 @@
+.card{
+    display: inline-block;
+    background-color: transparent;
+    border: transparent;
+    height: 100%;
+    overflow: auto;
+
+ 
+}
+.card-img-top{
+    width: 150px;
+    height: 100px;
+
+
+}
+a{
+    color: #49ABB8 ;
+}
+
+li{
+    border-right-style: solid;
+    border-color: #F2F2F2;
+    border-radius: 10px;
+    margin-left: 55px;
+}
+hr{
+    width: 700px;
+color :black;
+ }
+
+.card-text{
+    color: black;
+}

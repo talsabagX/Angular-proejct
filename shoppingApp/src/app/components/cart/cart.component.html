@@ -1,0 +1,56 @@
+<!-- <button *ngIf="isShowCartView" (click)="hideCartSideBar()">hide</button>
+<button *ngIf="!isShowCartView" (click)="showCartSideBar()">show</button> -->
+<section>
+
+    <header>
+        <p>Current Cart</p>
+
+
+    </header>
+    <main>
+        <div>
+            <table class="table table-old">
+
+                <tbody class="bg-success text-dark">
+
+                    <tr *ngFor="let currentCartItem of cartItem; let i=index">
+                        <div id="trDiv">
+                            <td>
+                                <!-- <button (click)=[(removeProductFromCart(i,currentCartItem.id))]
+                                    class="glyphicon glyphicon-remove"></button> -->
+
+                                <span (click)=[(deleteCartItem(i,currentCartItem.id))]
+                                    class="glyphicon glyphicon-remove"></span>
+                            </td>
+                            <td>{{currentCartItem.productName}}</td><br>
+                            <td>X</td>
+                            <td>{{currentCartItem.amount}}</td>
+                            <br>
+                            <td>price:</td>
+                            <td>{{ currentCartItem.total_price }} </td>
+
+
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+    <footer>
+        <table>
+            <tr>
+
+                <td>total price:</td>
+                <td>{{totalAmountToPay}} NIS</td><br>
+                <td><button routerLink="/order" routerLinkActive="the-chosen-one" class="footerButton">order</button>
+                 </td>
+                <td><button class="footerButton" (click)=[(deleteAllCartItems())]>clear</button></td>
+
+            </tr>
+        </table>
+
+    </footer>
+
+</section>

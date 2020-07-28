@@ -1,0 +1,28 @@
+<section>
+
+
+    <aside *ngIf="isShowCartView">
+        <app-cart></app-cart>
+    </aside>
+
+    <main *ngIf="!isShowCartView" class="after">
+        <button *ngIf="isShowCartView" (click)="hideCartSideBar()" class="glyphicon glyphicon-minus"></button>
+        <button *ngIf="!isShowCartView" (click)="showCartSideBar()" class="glyphicon glyphicon-plus"></button>
+        <router-outlet></router-outlet>
+
+    </main>
+    <main *ngIf="isShowCartView" class="before">
+        <button *ngIf="isShowCartView" (click)="hideCartSideBar()" class="glyphicon glyphicon-minus"></button>
+        <button *ngIf="!isShowCartView" (click)="showCartSideBar()" class="glyphicon glyphicon-plus"></button>
+        <router-outlet></router-outlet>
+
+    </main>
+
+    <aside>
+        <app-category></app-category>
+    </aside>
+
+
+
+
+</section>

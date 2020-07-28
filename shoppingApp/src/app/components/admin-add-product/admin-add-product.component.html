@@ -1,0 +1,20 @@
+
+<section>
+
+    <header>
+        <p>Add products</p>
+    </header>
+
+    <main>
+<div id="addProduct">
+   <label for="">Product name : <input type="text" [(ngModel)]="productForm.product_name"></label><br>
+   <label for="">Category : <select type="text" name="Category"  [(ngModel)]="productForm.category_id">
+        <option *ngFor="let currentCategory of category" placeholder="city" value="{{currentCategory.id}}">{{currentCategory.name}}</option></select></label><br> 
+        <label>Product price : <input type="number" [(ngModel)]="productForm.price"></label> 
+        <label>Product image :  <input type="text" [(ngModel)]="productForm.path"></label> 
+
+        <br>
+        <button type="submit"  (click)="addProduct()">Add Product</button>
+    </div>
+    </main>
+    </section>
